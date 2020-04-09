@@ -1,6 +1,9 @@
+require('dotenv').config();
 const server = require("./api/server.js");
 
-const port = 5000;
+// Make the port dynamic, so Heroku can assign one
+const port = process.env.PORT;
+
 server.listen(port, () => {
-  console.log(`\n*** Server Running on http://localhost:${port} ***\n`);
+  console.log(`\n Server running on http://localhost:${port} \n`);
 });
